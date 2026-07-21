@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { prisma } from "@/lib/prisma";
 import { HotelCard } from "@/components/sections/hotel-card";
 import { StarDivider } from "@/components/ui/star-divider";
@@ -79,6 +80,33 @@ export default async function HotelsPage({
           Filter
         </button>
       </form>
+
+      <section className="mt-12">
+        <div className="mb-6 text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-gold-500">Hotel Selection Lists</p>
+          <h2 className="mt-2 font-display text-2xl font-semibold text-ink-900 dark:text-white">Makkah &amp; Madinah Hotel Lists</h2>
+        </div>
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+          <div className="overflow-hidden rounded-2xl border border-ink-900/10 bg-white dark:border-white/10 dark:bg-white/5">
+            <Image
+              src="/images/hotels/makkah-hotels-selection.jpeg"
+              alt="Makkah hotels selection list"
+              width={1038}
+              height={1280}
+              className="h-auto w-full"
+            />
+          </div>
+          <div className="overflow-hidden rounded-2xl border border-ink-900/10 bg-white dark:border-white/10 dark:bg-white/5">
+            <Image
+              src="/images/hotels/madinah-hotels-selection.jpeg"
+              alt="Madinah hotels selection list"
+              width={1008}
+              height={1280}
+              className="h-auto w-full"
+            />
+          </div>
+        </div>
+      </section>
 
       {hotels.length > 0 ? (
         <div className="mt-16 space-y-20">
