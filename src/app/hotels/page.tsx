@@ -8,19 +8,157 @@ export const metadata: Metadata = {
   description: "Browse AA Group Travels hotel options in Makkah and Madinah.",
 };
 
+type HotelCategory = {
+  title: string;
+  items: string[];
+};
+
+type CityCategoryMap = Record<string, HotelCategory[]>;
+
 const cityDetails = {
   MAKKAH: {
     title: "Makkah Hotels",
     eyebrow: "Stay close to Masjid al-Haram",
     description:
-      "Comfortable Makkah hotel options for families, groups and travel partners, with categories from practical stays to luxury suites.",
+      "Selected Makkah hotels grouped by proximity and service type.",
   },
   MADINAH: {
     title: "Madinah Hotels",
     eyebrow: "Stay close to Al-Masjid an-Nabawi",
     description:
-      "Selected Madinah hotels for peaceful visits, group stays and tailored Umrah itineraries.",
+      "Selected Madinah hotels grouped by area and budget.",
   },
+};
+
+const hotelSelectionLists: CityCategoryMap = {
+  MADINAH: [
+    {
+      title: "Category 1 — Properties Near Women's Side",
+      items: [
+        "The Biltmore Madina",
+        "Madinah Hilton",
+        "Al Ageeg Madinah",
+        "Dar Al Eiman Al Haram",
+        "Taiba Front",
+        "Taiba Suites",
+        "Sofitel Shahd Al Madinah",
+        "Anwar Al Madinah Movenpick",
+        "Emaar Royal",
+        "Worth Peninsula",
+        "InterContinental Dar Al Hijra",
+        "Dallah Taiba",
+        "Artal International",
+        "Kayaan International",
+        "Zowar International",
+        "Odst Al Madinah",
+        "Dar Al Naseem",
+        "Safwat Al Madinah",
+        "Al Ansar Golden Tulip",
+        "Grand Plaza Medina",
+        "Grand Plaza Badr Al Magam",
+        "Ritz Al Madinah",
+        "Saja Al Madinah",
+        "Shaza Regency",
+        "Waqf Outhman Bin Affan",
+        "Al Saha",
+        "Mukhtara International",
+      ],
+    },
+    {
+      title: "Category 2 — 5-Star Properties (Bab As Salam / Qibla / Baqi Side)",
+      items: [
+        "Crowne Plaza IHG",
+        "Pullman ZamZam Madinah",
+        "Jayden Medina",
+        "Tulip Inn Al Dar Rawafed",
+        "Al Manakha Rotana",
+        "Mysk Touch",
+      ],
+    },
+    {
+      title: "Category 3 — Budget-Friendly Properties",
+      items: [
+        "Sky View",
+        "Nusuk Al Eman",
+        "Bir Al Eiman",
+        "Taif Al Nebras",
+        "Rama Al Madinah",
+        "Grand Zowar",
+        "Mukhtara Gharbi",
+        "Ancyra Medina",
+        "Swiss International",
+        "Gulnar Taiba",
+        "Rowdat Al Mukhtara",
+        "Nusuk Madina",
+        "Nusuk Hijra",
+        "Plaza Inn Ohud",
+        "Rehab Al Mysk",
+        "Artsafa Golden",
+      ],
+    },
+  ],
+  MAKKAH: [
+    {
+      title: "Category 1 — 5-Star Nearby Properties",
+      items: [
+        "Swissotel Makkah",
+        "Swiss Al Magam",
+        "Fairmont Royal Clock Tower",
+        "Mövenpick Hajjar Tower",
+        "Pullman Zamzam",
+        "Al Marwa Rayhaan Rotana",
+        "Raffles Makkah",
+        "Makkah Towers & Hotel",
+        "Address Jable Omer Makkah",
+        "Marriot Makkah",
+        "Hilton Convention",
+        "Double Tree By Hilton",
+        "Hyatt Regency",
+        "Anjum Hotel Makkah",
+        "Sheraton Makkah",
+        "Al Safwa Towers & Hotel",
+        "Dar Al Tawhid Intercontinental",
+        "Hilton Suites",
+        "Conrad Makkah",
+        "Elaf Kinda",
+        "Rotana Jable Omer",
+      ],
+    },
+    {
+      title: "Category 2 — Shuttle Service Properties",
+      items: [
+        "Voco Makkah (24/7)",
+        "Le Meridien Towers (24/7)",
+        "M Hotel Makkah By Millennium",
+        "Al Kiswah Towers (24/7)",
+        "Saja Makkah (24/7)",
+        "Holiday InnNawazi Towers",
+        "Hidaya Towers",
+        "Novotel Thakher",
+        "Park-in Raddison",
+        "Four Points By Sheraton",
+      ],
+    },
+    {
+      title: "Category 3 — Budget-Friendly Properties (Walking Distance)",
+      items: [
+        "Worth Elite",
+        "Saif Al Majd",
+        "Bader Al Masa",
+        "Al Masa Grand",
+        "Elad Ajyad",
+        "Emaar Andlusia",
+        "Emaar Khalil",
+        "Emaar Grand",
+        "Emaar Sultan",
+        "Tara Khalil",
+        "Fajar Al Badea",
+        "Nawarat Al Shams",
+        "Majd Al Muhajireen",
+        "Zilal Nazula",
+      ],
+    },
+  ],
 };
 
 export default async function HotelsPage({
@@ -80,33 +218,50 @@ export default async function HotelsPage({
         </button>
       </form>
 
-      {hotels.length > 0 ? (
-        <div className="mt-16 space-y-20">
-          {citySections.map((section) => (
-            <section key={section.key} id={section.key.toLowerCase()}>
-              <div className="mb-8 max-w-3xl">
-                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-gold-500">{section.eyebrow}</p>
-                <h2 className="mt-2 font-display text-3xl font-semibold text-ink-900 dark:text-white">{section.title}</h2>
-                <p className="mt-3 text-sm leading-relaxed text-ink-500 dark:text-white/60">{section.description}</p>
-              </div>
-              {section.hotels.length > 0 ? (
-                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                  {section.hotels.map((h) => (
-                    <HotelCard
-                      key={h.id}
-                      hotel={{ slug: h.slug, name: h.name, city: h.city, star: h.star, distanceMeters: h.distanceMeters, imageUrl: h.images?.[0]?.url }}
-                    />
+      <section className="mt-12 space-y-12">
+        {citySections.map((section) => (
+          <div key={section.key} className="space-y-8">
+            <div className="max-w-3xl">
+              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-gold-500">{section.eyebrow}</p>
+              <h2 className="mt-2 font-display text-3xl font-semibold text-ink-900 dark:text-white">{section.title}</h2>
+              <p className="mt-3 text-sm leading-relaxed text-ink-500 dark:text-white/60">{section.description}</p>
+            </div>
+
+            {hotelSelectionLists[section.key]?.map((category) => (
+              <section key={category.title} className="rounded-2xl border border-ink-900/10 bg-white p-6 dark:border-white/10 dark:bg-white/5">
+                <h3 className="font-display text-xl font-semibold text-ink-900 dark:text-white">{category.title}</h3>
+                <ul className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                  {category.items.map((hotelName) => (
+                    <li
+                      key={hotelName}
+                      className="rounded-lg border border-ink-900/10 bg-ink-50 px-4 py-3 text-sm text-ink-700 dark:border-white/10 dark:bg-white/5 dark:text-white/80"
+                    >
+                      {hotelName}
+                    </li>
                   ))}
-                </div>
-              ) : (
-                <div className="rounded-lg border border-dashed border-ink-900/15 bg-white p-8 text-sm text-ink-400 dark:border-white/15 dark:bg-white/5 dark:text-white/50">
-                  No {section.title.toLowerCase()} are available yet.
-                </div>
-              )}
-            </section>
-          ))}
-        </div>
-      ) : (
+                </ul>
+              </section>
+            ))}
+
+            {section.hotels.length > 0 ? (
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {section.hotels.map((h) => (
+                  <HotelCard
+                    key={h.id}
+                    hotel={{ slug: h.slug, name: h.name, city: h.city, star: h.star, distanceMeters: h.distanceMeters, imageUrl: h.images?.[0]?.url }}
+                  />
+                ))}
+              </div>
+            ) : (
+              <div className="rounded-lg border border-dashed border-ink-900/15 bg-white p-8 text-sm text-ink-400 dark:border-white/15 dark:bg-white/5 dark:text-white/50">
+                No {section.title.toLowerCase()} are available yet.
+              </div>
+            )}
+          </div>
+        ))}
+      </section>
+
+      {hotels.length === 0 && (
         <p className="mt-14 text-center text-sm text-ink-400 dark:text-white/50">
           No hotels found. Connect a database and run <code>npm run seed</code> to populate this page.
         </p>
