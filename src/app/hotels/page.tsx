@@ -155,19 +155,12 @@ const hotelSelectionLists = {
   ],
 };
 
-export default async function HotelsPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ city?: string; star?: string }>;
-}) {
-  const filters = await searchParams;
+export default async function HotelsPage() {
   let hotels: any[] = [];
   try {
     hotels = await prisma.hotel.findMany({
       where: {
         active: true,
-        city: filters.city ? (filters.city as any) : undefined,
-        star: filters.star ? (filters.star as any) : undefined,
       },
       include: { images: { orderBy: { position: "asc" }, take: 1 } },
       orderBy: [{ featured: "desc" }, { createdAt: "desc" }],
@@ -189,28 +182,10 @@ export default async function HotelsPage({
         <p className="text-xs font-semibold uppercase tracking-[0.3em] text-maroon-500">AA Group Travels hotels</p>
         <h1 className="mt-3 font-display text-4xl font-semibold text-ink-900 dark:text-white">Hotels in Makkah &amp; Madinah</h1>
         <p className="mt-4 text-sm leading-relaxed text-ink-500 dark:text-white/60">
-          Choose your city and browse hotel options for your Umrah journey.
+          Browse hotel options for your Umrah journey.
         </p>
         <StarDivider />
       </div>
-
-      <form className="mx-auto mt-10 flex max-w-2xl flex-wrap items-center justify-center gap-3" method="get">
-        <select name="city" defaultValue={filters.city} className="h-11 rounded-lg border border-ink-900/15 bg-white px-4 text-sm dark:border-white/15 dark:bg-ink-900 dark:text-white">
-          <option value="">All Cities</option>
-          <option value="MAKKAH">Makkah</option>
-          <option value="MADINAH">Madinah</option>
-        </select>
-        <select name="star" defaultValue={filters.star} className="h-11 rounded-lg border border-ink-900/15 bg-white px-4 text-sm dark:border-white/15 dark:bg-ink-900 dark:text-white">
-          <option value="">All Categories</option>
-          <option value="THREE">3-Star</option>
-          <option value="FOUR">4-Star</option>
-          <option value="FIVE">5-Star</option>
-          <option value="LUXURY_SUITE">Luxury Suite</option>
-        </select>
-        <button type="submit" className="h-11 rounded-full bg-maroon-500 px-6 text-sm font-medium text-white hover:bg-maroon-600">
-          Filter
-        </button>
-      </form>
 
       <section className="mt-12">
         <div className="mb-6 text-center">
