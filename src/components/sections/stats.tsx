@@ -1,7 +1,7 @@
 const stats = [
-  { value: "180+", label: "Hotels Partnered" },
+  { value: "180+", label: "Hotels Available" },
   { value: "45,000+", label: "Happy Customers" },
-  { value: "600+", label: "Travel Agencies" },
+  { value: "600+", label: "Group Bookings" },
   { value: "22", label: "Countries Served" },
 ];
 

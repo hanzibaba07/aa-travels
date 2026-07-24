@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: "%s | AA Group Travels",
   },
   description:
-    "AA Group Travels provides hotel stays and transport services in Makkah & Madinah for pilgrims, groups and travel partners.",
+    "AA Group Travels provides hotel stays and transport services in Makkah & Madinah for pilgrims, families and groups.",
   openGraph: {
     type: "website",
     siteName: "AA Group Travels",

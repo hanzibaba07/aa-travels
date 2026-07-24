@@ -49,7 +49,7 @@ export default function TransportPage() {
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold-400">AA Group Travels transport</p>
           <h1 className="mt-4 font-display text-4xl font-semibold sm:text-5xl">Transport for Makkah &amp; Madinah</h1>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-white/70">
-            Reliable airport, city and intercity transport for Umrah travellers, families, groups and travel partners.
+            Reliable airport, city and intercity transport for Umrah travellers, families and groups.
           </p>
           <div className="mt-9">
             <Button variant="whatsapp" size="lg" asChild>

@@ -4,12 +4,12 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-medium tracking-wide transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-400 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-medium tracking-wide transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-maroon-400 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
         primary: "bg-maroon-500 text-white hover:bg-maroon-600",
-        gold: "bg-gold-400 text-ink-900 hover:bg-gold-300",
+        gold: "bg-gold-300 text-maroon-700 hover:bg-gold-200",
         outline: "border border-ink-900/15 bg-transparent hover:bg-ink-900/5 dark:border-white/20 dark:hover:bg-white/10",
         ghost: "hover:bg-ink-900/5 dark:hover:bg-white/10",
         whatsapp: "bg-[#25D366] text-white hover:bg-[#1ebd5a]",

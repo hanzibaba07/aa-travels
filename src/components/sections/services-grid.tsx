@@ -6,7 +6,7 @@ const services = [
   { icon: Car, title: "Airport & VIP Transport", desc: "Reliable transfers and private VIP transport for individuals and groups." },
   { icon: Users, title: "Group & Corporate Bookings", desc: "Tailored allocations for large groups and corporate travel programmes." },
   { icon: Building2, title: "Umrah Packages", desc: "Ready-made and fully customised Umrah packages for every budget." },
-  { icon: Plane, title: "Air Tickets", desc: "Competitive fares sourced through our travel partner network." },
+  { icon: Plane, title: "Air Tickets", desc: "Competitive fares sourced through trusted airline and supplier networks." },
   { icon: Sparkles, title: "Customised Packages", desc: "Bespoke itineraries built around your dates, budget and group size." },
 ];
 
@@ -17,7 +17,7 @@ export function ServicesGrid() {
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-maroon-500">What we offer</p>
           <h2 className="mt-3 font-display text-3xl font-semibold text-ink-900 dark:text-white sm:text-4xl">
-            Everything a pilgrim or partner needs
+            Everything a pilgrim needs
           </h2>
           <StarDivider />
         </div>

@@ -9,7 +9,7 @@ const testimonials = [
     name: "Yusuf Rahman",
     type: "Travel Agent, Birmingham",
     quote:
-      "Direct contracts meant our group rates finally made sense. Quotations arrive within hours, not days.",
+      "The team gave us clear hotel choices and fast quotations. Everything was arranged smoothly for our group.",
   },
   {
     name: "The Iqbal Family",
@@ -37,8 +37,8 @@ export function Testimonials() {
         <StarDivider />
 
         <div className="mt-10 rounded-2xl border border-ink-900/10 bg-white p-10 dark:border-white/10 dark:bg-white/5">
-          <Quote className="mx-auto mb-4 text-gold-400" />
-          <div className="mb-4 flex justify-center gap-1 text-gold-400">
+          <Quote className="mx-auto mb-4 text-maroon-300" />
+          <div className="mb-4 flex justify-center gap-1 text-maroon-300">
             {Array.from({ length: 5 }).map((_, i) => <Star key={i} size={16} fill="currentColor" />)}
           </div>
           <p className="font-display text-xl leading-relaxed text-ink-900 dark:text-white">&ldquo;{t.quote}&rdquo;</p>

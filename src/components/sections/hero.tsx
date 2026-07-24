@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Search, Handshake, Car } from "lucide-react";
+import { MessageCircle, Search, Car } from "lucide-react";
 
 export function Hero() {
   return (
@@ -23,7 +23,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-gold-400"
+          className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-maroon-200"
         >
           AA Group Travels &middot; Makkah &amp; Madinah
         </motion.p>
@@ -34,7 +34,7 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="font-display text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl"
         >
-          Hotels and Transport for Your <span className="text-gold-400">Umrah</span> Journey
+          Hotels and Transport for Your <span className="text-maroon-200">Umrah</span> Journey
         </motion.h1>
 
         <motion.p
@@ -43,7 +43,7 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="mx-auto mt-6 max-w-2xl text-base text-white/70 sm:text-lg"
         >
-          Comfortable hotel options in Makkah and Madinah, with reliable transport for families, groups and travel partners.
+          Comfortable hotel options in Makkah and Madinah, with reliable transport for families and groups.
         </motion.p>
 
         <motion.div
@@ -59,9 +59,6 @@ export function Hero() {
             <a href="https://wa.me/447000000000" target="_blank" rel="noopener noreferrer">
               <MessageCircle size={18} /> WhatsApp
             </a>
-          </Button>
-          <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10" asChild>
-            <Link href="/travel-agents"><Handshake size={18} /> Become Partner</Link>
           </Button>
           <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10" asChild>
             <Link href="/transport"><Car size={18} /> Transport</Link>

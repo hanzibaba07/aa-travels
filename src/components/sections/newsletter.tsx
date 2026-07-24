@@ -14,7 +14,7 @@ export function Newsletter() {
         <h2 className="font-display text-2xl font-semibold text-white sm:text-3xl">
           Umrah tips &amp; hotel offers, straight to your inbox
         </h2>
-        <p className="mt-2 text-sm text-white/60">No spam — occasional updates on new contracts and travel advisories.</p>
+        <p className="mt-2 text-sm text-white/60">No spam — occasional updates on hotel offers and travel advisories.</p>
         {sent ? (
           <p className="mt-6 text-gold-400">Thank you — you're subscribed.</p>
         ) : (

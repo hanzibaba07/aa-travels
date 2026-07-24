@@ -4,7 +4,7 @@ export const metadata = { title: "FAQ" };
 
 const faqs = [
   { q: "How quickly will I receive a quotation?", a: "Most quote requests are answered within a few working hours during UK office hours." },
-  { q: "Do you offer wholesale rates for agencies?", a: "Yes — register on the Travel Agents page for direct contract pricing." },
+  { q: "Do you support large group bookings?", a: "Yes — share your travel dates and group size through the quote form and we will prepare suitable hotel and transport options." },
   { q: "Can I request a custom Umrah package?", a: "Yes, use the quote form and describe your dates, group size and budget." },
 ];
 

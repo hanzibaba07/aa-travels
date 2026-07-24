@@ -13,7 +13,7 @@ const cityDetails = {
     title: "Makkah Hotels",
     eyebrow: "Stay close to Masjid al-Haram",
     description:
-      "Comfortable Makkah hotel options for families, groups and travel partners, with categories from practical stays to luxury suites.",
+      "Comfortable Makkah hotel options for families and groups, with categories from practical stays to luxury suites.",
   },
   MADINAH: {
     title: "Madinah Hotels",

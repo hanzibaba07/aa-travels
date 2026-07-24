@@ -5,7 +5,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.aatravelgroup.c
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes = [
-    "", "/hotels", "/transport", "/umrah-packages", "/travel-agents", "/services",
+    "", "/hotels", "/transport", "/umrah-packages", "/services",
   ].map((path) => ({
     url: `${siteUrl}${path}`,
     lastModified: new Date(),

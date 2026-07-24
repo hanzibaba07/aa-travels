@@ -16,14 +16,14 @@ export function Footer() {
               className="h-20 w-auto rounded-sm bg-white object-contain p-2"
             />
             <p className="mt-3 text-sm text-white/60">
-              Hotel stays and transport services in Makkah &amp; Madinah for families, groups and travel partners.
+              Hotel stays and transport services in Makkah &amp; Madinah for families and groups.
             </p>
           </div>
           <div>
             <h4 className="mb-3 text-xs font-semibold uppercase tracking-widest text-gold-400">Company</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/travel-agents" className="hover:text-white">Travel Agents</Link></li>
               <li><Link href="/services" className="hover:text-white">Services</Link></li>
+              <li><Link href="/faq" className="hover:text-white">FAQ</Link></li>
               <li><a href="https://wa.me/447000000000" target="_blank" rel="noopener noreferrer" className="hover:text-white">WhatsApp</a></li>
             </ul>
           </div>

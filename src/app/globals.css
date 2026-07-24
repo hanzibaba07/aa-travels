@@ -7,10 +7,10 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-cream text-ink-900 dark:bg-ink-900 dark:text-white;
+    @apply bg-white text-ink-900 dark:bg-ink-900 dark:text-white;
   }
   :focus-visible {
-    @apply outline-none ring-2 ring-gold-400 ring-offset-2;
+    @apply outline-none ring-2 ring-maroon-400 ring-offset-2;
   }
 }
 

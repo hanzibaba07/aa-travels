@@ -21,7 +21,7 @@ export async function FeaturedHotels() {
     <section className="bg-white py-24 dark:bg-ink-950/40">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-maroon-500">Direct contracts</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-maroon-500">Featured stays</p>
           <h2 className="mt-3 font-display text-3xl font-semibold text-ink-900 dark:text-white sm:text-4xl">
             Featured Hotels
           </h2>

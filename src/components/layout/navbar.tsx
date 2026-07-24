@@ -14,7 +14,6 @@ const links = [
   { href: "/hotels", label: "Hotels" },
   { href: "/transport", label: "Transport" },
   { href: "/umrah-packages", label: "Umrah Packages" },
-  { href: "/travel-agents", label: "Travel Agents" },
   { href: "/services", label: "Services" },
 ];
 
@@ -43,8 +42,8 @@ export function Navbar() {
               key={l.href}
               href={l.href}
               className={cn(
-                "text-sm font-medium text-ink-700 transition-colors hover:text-maroon-500 dark:text-white/80 dark:hover:text-gold-400",
-                pathname === l.href && "text-maroon-500 dark:text-gold-400"
+                "text-sm font-medium text-ink-700 transition-colors hover:text-maroon-500 dark:text-white/80 dark:hover:text-maroon-300",
+                pathname === l.href && "text-maroon-500 dark:text-maroon-300"
               )}
             >
               {l.label}
